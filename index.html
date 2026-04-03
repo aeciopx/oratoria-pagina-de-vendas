@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mestre da Oratória | Transforme sua Comunicação</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #fbbf24;
+            --accent: #ef4444;
+            --text-dark: #1f2937;
+            --text-light: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Countdown Bar */
+        .countdown-bar {
+            background-color: var(--accent);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section (Attention) */
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.9)), url('https://picsum.photos/seed/oratory/1920/1080');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-img {
+            max-width: 600px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* AIDA Sections */
+        .section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .interest {
+            background-color: #f9fafb;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2rem; }
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-subtext {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: var(--text-dark);
+            font-weight: normal;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card .author {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .badge {
+            background-color: #059669;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-bar">
+        OFERTA EXCLUSIVA: Esta página expira em <span id="timer">15:00</span> minutos!
+    </div>
+
+    <!-- Hero Section (ATTENTION) -->
+    <header class="hero">
+        <div class="badge">CURSO ONLINE APROVADO</div>
+        <h1>Domine a Arte de Falar em Público e Transforme sua Carreira</h1>
+        <p>Descubra como vencer o medo, projetar autoridade e convencer qualquer plateia com o método passo a passo de oratória moderna.</p>
+        
+        <a href="https://go.hotmart.com/O105203453T?dp=1" class="cta-button">
+            ADQUIRIR POR APENAS R$ 49,90
+            <span class="cta-subtext">Curso online e aprovado pela maioria dos alunos</span>
+        </a>
+
+        <br>
+        <img src="https://i.ibb.co/wZv8P4MW/woman-giving-speech.jpg" alt="Oratória de Sucesso" class="hero-img" referrerPolicy="no-referrer">
+    </header>
+
+    <!-- Interest Section (INTEREST) -->
+    <section class="section interest">
+        <h2 class="section-title">Por que a Oratória é sua Maior Arma?</h2>
+        <div class="grid">
+            <div>
+                <p>Você sabia que o medo de falar em público é maior que o medo da morte para muitas pessoas? Esse bloqueio está impedindo você de alcançar cargos de liderança, fechar grandes negócios e ser reconhecido pelo seu talento.</p>
+                <br>
+                <p>No nosso curso, transformamos sua insegurança em uma comunicação magnética. Não é apenas sobre falar, é sobre ser ouvido e respeitado.</p>
+            </div>
+            <div>
+                <img src="https://i.ibb.co/5g6ms2f0/person-holding-speech-official-event.jpg" alt="Comunicação Impactante" style="width: 100%; border-radius: 10px;" referrerPolicy="no-referrer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Desire Section (DESIRE) -->
+    <section class="section">
+        <h2 class="section-title">O Que Você Vai Aprender</h2>
+        <div class="grid">
+            <div style="order: 2;">
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 15px;">✅ <strong>Controle Emocional:</strong> Técnicas de respiração e mindset para eliminar o nervosismo.</li>
+                    <li style="margin-bottom: 15px;">✅ <strong>Linguagem Corporal:</strong> Como usar gestos e postura para transmitir confiança.</li>
+                    <li style="margin-bottom: 15px;">✅ <strong>Roteirização:</strong> Como criar apresentações que prendem a atenção do início ao fim.</li>
+                    <li style="margin-bottom: 15px;">✅ <strong>Voz e Dicção:</strong> Exercícios práticos para uma fala clara e envolvente.</li>
+                </ul>
+                <div style="text-align: center;">
+                    <a href="https://go.hotmart.com/O105203453T?dp=1" class="cta-button">
+                        QUERO MEU ACESSO AGORA
+                    </a>
+                </div>
+            </div>
+            <div style="order: 1;">
+                <img src="https://i.ibb.co/Vc7P9TSs/corporate-businessman-giving-presentation-large-audience.jpg" alt="Treinamento" style="width: 100%; border-radius: 10px;" referrerPolicy="no-referrer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof (ACTION - Part 1) -->
+    <section class="section testimonials">
+        <h2 class="section-title" style="color: white;">O que dizem nossos alunos</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Eu travava completamente em reuniões. Depois do curso, consegui apresentar meu projeto para a diretoria e fui promovido!"</p>
+                <div class="author">- Ricardo Santos, Gerente de Projetos</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"As técnicas de linguagem corporal mudaram a forma como as pessoas me veem. Hoje sinto que tenho autoridade quando falo."</p>
+                <div class="author">- Mariana Lima, Advogada</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"O melhor investimento que fiz na minha carreira. O suporte é incrível e o conteúdo é direto ao ponto."</p>
+                <div class="author">- Carlos Oliveira, Empreendedor</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <h2 class="section-title">Dúvidas Frequentes</h2>
+        <div class="faq-item">
+            <div class="faq-question">O curso é para iniciantes?</div>
+            <div class="faq-answer">Sim! O método foi desenhado para quem está começando do zero absoluto até quem já fala mas quer refinar suas técnicas.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Como recebo o acesso?</div>
+            <div class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá os dados de acesso no seu e-mail.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Tem certificado?</div>
+            <div class="faq-answer">Sim, ao concluir todas as aulas você poderá emitir seu certificado de conclusão.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">E se eu não gostar?</div>
+            <div class="faq-answer">Você tem 7 dias de garantia incondicional. Se não ficar satisfeito, devolvemos 100% do seu dinheiro.</div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="section" style="background-color: #fff; border: 2px dashed var(--primary); border-radius: 20px; margin-top: 40px; margin-bottom: 40px; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <img src="https://i.ibb.co/hRRw5Rvz/selo-garantia-incondicional-7-dias.png" alt="Selo de Garantia" style="width: 180px; margin-bottom: 20px;" referrerPolicy="no-referrer">
+            <h2 class="section-title" style="margin-bottom: 20px;">Risco Zero: Garantia Incondicional de 7 Dias</h2>
+            <p style="font-size: 1.2rem; color: var(--text-dark); margin-bottom: 20px;">
+                Eu confio tanto no meu método que vou tirar todo o peso das suas costas. Você tem <strong>7 dias inteiros</strong> para testar o curso.
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-dark);">
+                Se por qualquer motivo você não ficar 100% satisfeito ou achar que a oratória não é para você, basta nos enviar um único e-mail e devolveremos <strong>todo o seu dinheiro</strong>. Sem perguntas, sem letras miúdas e sem burocracia.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" style="text-align: center; background-color: #f3f4f6;">
+        <h2 style="font-size: 2rem; margin-bottom: 20px;">Aproveite a Condição Especial</h2>
+        <p style="font-size: 1.5rem; color: var(--accent); font-weight: bold; text-decoration: line-through;">De R$ 197,00</p>
+        <p style="font-size: 3rem; color: #059669; font-weight: bold;">Por apenas R$ 49,90</p>
+        <p>Pagamento único com acesso vitalício</p>
+        
+        <a href="https://go.hotmart.com/O105203453T?dp=1" class="cta-button">
+            GARANTIR MINHA VAGA POR R$ 49,90
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Cookies</a>
+        </div>
+        <p>&copy; 2026 Mestre da Oratória. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Countdown Timer Script
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var fifteenMinutes = 60 * 15,
+                display = document.querySelector('#timer');
+            startTimer(fifteenMinutes, display);
+        };
+    </script>
+</body>
+</html>
+
